@@ -1,0 +1,185 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Cálculo Numérico: Trabalho 0
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}}
+
+\vspace{1cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivo}
+O objetivo principal deste trabalho é proporcionar aos alunos uma
+primeira experiência com a interpretação e implementação de uma norma
+técnica. O objetivo secundário é ambientar os alunos com o método de
+organização de envio de trabalho por email para o professor.
+
+\section{Valor}
+O trabalho valerá $0.5$pt na P1, bastando que a entrega seja válida.
+
+\section{Conteúdo}
+O grupo deve fazer a seguinte conversão de base:
+ 
+\begin{enumerate}
+\item Converter o número $11111011111_2$ da base binária para a base
+  decimal Todos os cálculos necessários devem ser apresentados no
+  trabalho.
+\end{enumerate}
+
+\section{Entrega}
+A interpretação e implementação de normas técnicas é parte importante
+do trabalho do engenheiro, seja para a implementação de um processo em
+uma linha de produção em fábrica, produção de peças atendendo às
+especificações técnicas necessárias ao funcionamento de máquinas ou
+mesmo a correta mistura na composição de materiais de construção ou
+metalúrgicos. A falha na implementação de todos os detalhes de uma
+especificação pode gerar prejuízos à empresa ou cliente, o que pode
+inviabilizar a manutenção do emprego do engenheiro responsável.
+
+Devido à grande quantidade de emails recebidos de alunos, é necessário
+que os alunos se identifiquem ao enviar o trabalho. Para que eu possa
+organizar os trabalhos recebidos, preciso que os alunos se adequem a
+um padrão de identificação. A norma técnica aqui contida descreve o
+processo de organização para entrega de trabalhos acadêmicos para a
+disciplina.
+
+O trabalho 0 deve ser entregue por email para o endereço
+\url{prof.felipefigueiredo@gmail.com} até a data determinada no
+endereço
+\url{https://sites.google.com/site/proffelipefigueiredo/anhanguera/engenharia}.
+ 
+Enviar os trabalhos por email até a meia noite da data marcada. Não
+serão considerados trabalhos enviados posteriormente.
+
+\subsection{Especificação}
+
+\begin{itemize}
+\item Identifique no assunto do email o curso, turno (manhã ou noite),
+  e a turma.
+\item Identifique no corpo do email os nomes em ordem alfabética e RAs
+  dos alunos.
+\item O trabalho deve ser anexado ao email no formato PDF.
+\end{itemize}
+
+\subsection{Exemplo}
+
+O grupo é do curso de Engenharia Civil, no turno da Manhã, do quinto
+período turma B. Os campos do email devem ser preenchidos como segue:
+
+\begin{tabular}{|l|}
+  \hline
+  Assunto: Trabalho 2 Engenharia Civil 5B Manhã\\
+  \hline
+  Fulano da Silva RA 0000001 \\
+  Beltrano da Silva RA 0000002 \\
+  \ldots \\
+  Ciclano da Silva RA 0000010  \\
+  \hline
+\end{tabular}
+ 
+É dever do aluno zelar para que seu trabalho esteja propriamente
+identificado, para que seja corrigido. Trabalhos que não aderirem às
+especificações acima serão desconsiderados.
+ 
+Trabalhos textuais e relatórios devem ser convertidos para o formato
+PDF. Não deixe de ler as regras para trabalhos feitos em casa.
+
+\subsection{Observações}
+
+\begin{enumerate}
+\item A sala de aula não identifica a turma! A sala de aula pode ser
+  trocada após o início das aulas, ao passo que a turma é a informação
+  cadastrada no sistema, na pauta de presença e ata de provas. Assim,
+  a turma será sempre identificada pelo período e uma letra (e.g.,
+  turma B do quinto período: 5B, conforme o exemplo acima).
+\item O objetivo de qualquer trabalho em grupo é proporcionar aos
+  alunos o treinamento do trabalho em equipe, e as estratégias de
+  negociação e comunicação. O objetivo NÃO É reduzir a carga de
+  estudo, dividindo tarefas para cada componente do grupo. Cada
+  componente do grupo deve compreender e ser capaz de explicar
+  oralmente qualquer etapa do trabalho.
+
+\end{enumerate}
+
+ 
+
+
+\end{document}
