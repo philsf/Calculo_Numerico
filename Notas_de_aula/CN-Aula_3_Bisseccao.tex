@@ -88,46 +88,174 @@ Cálculo Numérico: Notas de aula: Bissecção
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section*{2.3.2 I Método da Bissecção (pg41)}
 
-\begin{itemize}
-\item Começar a aula com jogo de adivinhação
-\item Motivar o método da bissecção para otimizar o processo
-\end{itemize}
+\subsection*{Isolamento de raízes}
+``Chutar'' valores para $x$ e verificar o sinal de $f(x)$, construindo
+uma tabela.
+
+Exemplos:
+
+$$f(x)=-x+1$$
+
+$$\begin{tabular}{c|ccccc}
+%  \hline
+  $x$ & -4 & -2 & 0 & 2 & 4\\
+  \hline
+  $f(x)$ & + & + & + & - & - \\
+%  \hline
+\end{tabular}$$
+
+\bigskip
+Já na função:
+
+$$f(x) = x^2-1$$
+
+$$\begin{tabular}{c|ccccc}
+  $x$ & -4 & -2 & 0 & 2 & 4\\
+  \hline
+  $f(x)$ & + & + & - & + & +\\
+\end{tabular}$$
+
+% $$f(x) = x^3-9x +3$$
+
+% $$\begin{tabular}{c|cccccccc}
+% %  \hline
+%   $x$ & -5 & -3 & -1 & 0 & 1 & 2 & 3 & 4 \\
+%   \hline
+%   $f(x)$&- & + & + & + & - & - & + & + \\
+% %  \hline
+% \end{tabular}$$
 
 \subsection*{Jogo}
 
+Atividade lúdica: Fazer um jogo de adivinhação e motivar o método da
+bissecção para otimizar o processo.
+
+
 \begin{itemize}
-\item Escolher dois voluntários na turma
+\item Escolher dois voluntários na turma.
 \item O primeiro vai fazer tentativas de adivinhar o número escolhido
 \item O segundo sabe qual é o número escolhido mas só pode dar pistas
   se a tentativa é maior ou menor que a resposta
-\item Contar quantas tentativas são feitas.
-\item Parâmetros iniciais: número 71, maior que 0, menor que 200
+\item O prof. vai contar quantas tentativas são feitas.
+\item Exemplo: número 71, maior que 0, menor que 200
 \end{itemize}
 
-\subsection*{Bissecção}
+\clearpage
+\subsection*{Método da Bissecção}
 
 Reduzir o intervalo inicial $[a,b]$ para intervalos $[a_k,b_k]$ até
 chegar na precisão desejada ($b_k - a_b < \varepsilon$). Cada iteração
-$k$ considera o ponto médio $x_k$ como valor aproximado
+$k$ considera o ponto médio $x_k$ como valor aproximado $\bar{x}$.
 
+\bigskip
+\begin{center}
+  \fbox{
+  % \addtolength{\linewidth}{-2\fboxsep}%
+  % \addtolength{\linewidth}{-2\fboxrule}%
+    \begin{minipage}{0.3\linewidth}
+      {\bf Teste}
+
+      Se $f(a)f(x)>0$, então $a=x$.  
+
+      Caso contrário, então $b=x$.
+    \end{minipage}
+  }
+\end{center}
+\bigskip
 
 Exemplos: 
 
 \begin{enumerate}
-\item Função de primeiro grau $f(x) = -x+1$ no intervalo $[0,3]$
+\item Função de primeiro grau $f(x) = -x + 1$ no intervalo $[0,4]$
+
+  $$\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $k$ & $x$ & $f(x)$ & $a$ & $b$ & $b-a$\\
+    \hline
+    0 & ? & ? & 0 & 4 & 4\\
+    \hline
+    1 &  2 & -1 & 0 & 2 & 2\\
+    \hline
+    2 &  1 & 0 &0 & 1 & 1 \\
+    \hline
+  \end{tabular}$$
+
+  \begin{displaymath}    
+    [a,b]=[0,4]=[a_0,b_0]
+  \end{displaymath}
+  \begin{displaymath}    
+    f(a_0)=1>0, f(b_0)=-3<0
+  \end{displaymath}  
+  \begin{displaymath}    
+    x_0 = 2
+  \end{displaymath}
+  \begin{displaymath}    
+    f(0)f(2)<0 \text{ e }
+    f(2)f(4)>0 \Rightarrow \text{ escolhemos } [0,2]
+  \end{displaymath}
+  \begin{displaymath}
+    x_1 = 1
+  \end{displaymath}
+  \begin{displaymath}
+    f(1) = 0
+  \end{displaymath}
+  %   \begin{align*}
+  %     [a,b]=[0,4]=[a_0,b_0]\\
+  %     f(a_0)=1>0, f(b_0)=-3<0\\
+  %     x_0 = 2\\
+  %     f(0)f(2)<0 \text{ e }\\
+  %     f(2)f(4)>0 \Rightarrow \text{ escolhemos } [0,2]\\
+  % \end{align*}
+
+Fim! Encontramos a raíz exata! (Isso nunca vai mais acontecer...)
+
+\item Encontrar raiz da função $f(x) = x^2 - 1$ no intervalo $[0,3]$
+  com precisão de $10^{-1}$
   $$[a,b]=[0,3]=[a_0,b_0]$$
-  $$f(a_0)=1>0, f(b_0)=-2<0$$
+  $$f(0)=-1<0 \text{ e } f(3)=8>0$$
   $$x_0 = 1.5$$
-  $$f(x)$$
+  $$f(1.5) = 1.25$$
+
+  $$\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $k$ & $\bar{x}$ & $f(\bar{x})$ & $a$ & $b$ & $b-a$\\
+    \hline
+    0 & ? & ? & 0 & 3 & 3\\
+    \hline
+    1 & 1.5 & 1.25 & 0 & 1.5 & 1.5\\
+    \hline
+    2 & 0.75 & -0.4375 & 0.75  & 1.5 & 0.75  \\
+    \hline
+    3 & 1.125 & 0.265625 & 0.75 & 1.125 & 0.375 \\
+    \hline
+    4 & 0.9375 & -0.12109375 & 0.9375 & 1.125 & 0.1875 \\
+    \hline
+    5 & 1.03125 & 0.063476563 & 0.9375 & 1.03125 & 0.09375 $<$ 0.1 \\
+    \hline
+  \end{tabular}$$
+
+Então $\bar{x}= 1.0$ com $k=5$ iterações.
+
+  % \begin{tabular}{|c|c|c|c|c|c|}
+  %   \hline
+  %   $k$ & $\bar{x}$ & $f(\bar{x})$ & $a$ & $b$ & $b-a$\\
+  %   \hline
+  %   0 & ? & ? & 0 & 3 & 3\\
+  %   \hline
+  %   1 & 1.5 & 1.25 & 0 & 1.5 & 1.5\\
+  %   \hline
+  %   2 & 0.8 & -0.36 & 0.8 & 1.5 & 0.7 \\
+  %   \hline
+  %   3 & 1.1 & 0.21 & 0.8 & 1.1 & 0.3 \\
+  %   \hline
+  %   4 & 1.0 & 0.0 & ? & ? &  \\
+  %   \hline
+  %   5 & 1.03125 & 0.063476563 & 0.9375 & 1.03125 & 0.09375 $<$ 0.1 \\
+  %   \hline
+  % \end{tabular}
 
 
-\item Encontrar raiz da função $f(x) = x^2 - 2x +1$ no intervalo $[0,5]$
-  $$[a,b]=[0,5]=[a_0,b_0]$$
-  $$f(a_0)=1>0, f(b_0)>0$$
-  $$x_0 = 2.5$$
-  $$f(x)$$
-
-\item Raiz de $f(x) = e^x \sin{x} $
+% \item Raiz de $f(x) = e^x \sin{x} $
 
 \end{enumerate}
 
