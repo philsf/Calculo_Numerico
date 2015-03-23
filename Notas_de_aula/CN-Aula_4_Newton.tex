@@ -1,0 +1,96 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Cálculo Numérico: Notas de Aula: Método de Newton
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}}
+
+\vspace{1cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{2.3.2 IV Método de Newton-Raphson (pg 66)}
+
+$$
+x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+$$
+
+
+\end{document}
