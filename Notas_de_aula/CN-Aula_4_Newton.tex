@@ -134,6 +134,9 @@ Agora, com outro exemplo:
   f(x) = x^2 -1, x_0 = 1.5, \varepsilon <10^{-1}
 \end{displaymath}
 
+Para simplificar as contas, como a precisão exigida é de apenas um
+dígito ($\varepsilon <10^{-1})$, podemos usar dois dígitos nas etapas.
+
 Preparando o terreno:
 
 \begin{displaymath}
@@ -153,14 +156,14 @@ Aplicando a fórmula, temos:
 \end{displaymath}
 
 \begin{center}
-  \begin{tabular}{r|r|r|r|r}
+  \begin{tabular}{c|c|c|c|c}
     k & $\bar{x}$ & $f(\bar{x})$ & $f'(\bar{x})$ & $|\bar{x}_k - \bar{x}_{k-1}|$\\
     \hline
-    0 & 1.5 & 1.25 & 3 & ? \\
+    0 & 1.50 & 1.25 & 3.00 & ? \\
     \hline
     1 & 1.08 & 0.17 & 2.16 & 0.42 \\
     \hline
-    2 & 1.00 &  &  & 0.08 < 0.1 \\
+    2 & 1.00 &  &  & $0.08 < 0.1$ \\
   \end{tabular}
 \end{center}
 
