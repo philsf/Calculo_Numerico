@@ -92,5 +92,78 @@ $$
 x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}
 $$
 
+Exemplos:
+
+\begin{displaymath}
+  f(x) = -x+1, x_0=2
+\end{displaymath}
+
+
+Preparando o terreno, temos:
+
+\begin{displaymath}
+  f'(x) = -1
+\end{displaymath}
+portanto
+\begin{displaymath}
+  f(x_0) = -2+1 = -1, f'(x_0) = -1
+\end{displaymath}
+
+Aplicando a fórmula, temos:
+
+\begin{displaymath}
+  \bar{x}_1 = \bar{x}_0 - \frac{f(\bar{x}_0)}{f'(\bar{x}_0)} = 2-\frac{-1}{-1} = 1
+\end{displaymath}
+
+
+\begin{center}
+  \begin{tabular}{c|c|c|c|c}
+    k & $\bar{x}$ & $f(\bar{x})$ & $f'(\bar{x})$ & $|\bar{x}_k - \bar{x}_{k-1}|$\\
+    \hline
+    0 & 2 & -1 & -1 & ? \\
+    \hline
+    1 & 1 & 0 & ? & 0 \\
+  \end{tabular}
+\end{center}
+
+FIM!
+
+Agora, com outro exemplo:
+
+\begin{displaymath}
+  f(x) = x^2 -1, x_0 = 1.5, \varepsilon <10^{-1}
+\end{displaymath}
+
+Preparando o terreno:
+
+\begin{displaymath}
+  f'(x) = 2x
+\end{displaymath}
+
+portanto,
+
+\begin{displaymath}
+  f(\bar{x}_0) = 1.5^2-1 = 1.25, f'(\bar{x}_0) = 2 \times 1.5 = 3
+\end{displaymath}
+
+Aplicando a fórmula, temos:
+
+\begin{displaymath}
+  \bar{x}_1 = 1.5 - \frac{1.25}{3} = 1.08333 \approx 1.08
+\end{displaymath}
+
+\begin{center}
+  \begin{tabular}{r|r|r|r|r}
+    k & $\bar{x}$ & $f(\bar{x})$ & $f'(\bar{x})$ & $|\bar{x}_k - \bar{x}_{k-1}|$\\
+    \hline
+    0 & 1.5 & 1.25 & 3 & ? \\
+    \hline
+    1 & 1.08 & 0.17 & 2.16 & 0.42 \\
+    \hline
+    2 & 1.00 &  &  & 0.08 < 0.1 \\
+  \end{tabular}
+\end{center}
+
+FIM!
 
 \end{document}
