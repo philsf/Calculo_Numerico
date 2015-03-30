@@ -88,13 +88,13 @@ Cálculo Numérico: Lista Método da Bissecção
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formulário}
 
+\subsection*{Teste}
+
 \begin{center}
   \fbox{
   % \addtolength{\linewidth}{-2\fboxsep}%
   % \addtolength{\linewidth}{-2\fboxrule}%
     \begin{minipage}{0.3\linewidth}
-      {\bf Teste}
-
       Se $f(a)f(x)>0$, então $a=x$.  
 
       Caso contrário, então $b=x$.
@@ -102,11 +102,101 @@ Cálculo Numérico: Lista Método da Bissecção
   }
 \end{center}
 
+\subsection*{Critérios de parada}
+
+\begin{enumerate}
+\item Número máximo de passos $k$
+
+\item Precisão: erro máximo $\varepsilon$
+
+\begin{displaymath}
+  \varepsilon = b - a
+\end{displaymath}
+
+\end{enumerate}
+
 \section{Exercícios}
+
+\begin{enumerate}
+\item Encontre uma aproximação para a raiz contida em cada intervalo
+  abaixo para cada função. Use o método da bissecção até atingir a
+  precisão de $\varepsilon<10^{-2}$ ou $k=4$ passos, o que ocorrer
+  primeiro. Identifique na sua resposta a sequência $x_k$ obtida, e
+  use o último $x_k$ como resposta aproximada $\bar{x}$:
+
+  \begin{enumerate}
+  \item $f(x) = x$, em $[-1, 3]$
+  \item $f(x) = x$, em $[-1, 4]$
+  \item $f(x) = x^2 - 4$, em $[1.5, 3]$
+  \item $f(x) = x^3$, em $[-0.5, 1]$
+  \item $f(x) = x^3-1.5x$, em $[1, 2.5]$
+  \item $f(x) = x e^x$, em $[-0.5, 1]$
+  \item $f(x) = \sin x$, em
+    $\left[\frac{-\pi}{2},\frac{\pi}{4}\right]$
+  % \item $f(x) = $, em $[]$
+  % \item $f(x) = $, em $[]$
+  \end{enumerate}
+
+\item Determine o erro absoluto e o erro relativo da aproximação
+  $\bar{x}$ encontrada em cada item do exercício 1, considerando que
+  as soluções exatas são:
+  \begin{enumerate}
+  \item $x=0$ %$f(x) = x$, em $[-1, 3]$
+  \item $x=0$ %$f(x) = x$, em $[-1, 4]$
+  \item $x=2$ %$f(x) = x^2 - 4$, em $[1.5, 3]$
+  \item $x=0$ %$f(x) = x^3$, em $[-0.5, 1]$
+  \item $x=1.5$ %$f(x) = x^3-1.5x$, em $[1, 2.5]$
+  \item $x=0$ %$f(x) = x e^x$, em $[-0.5, 1]$
+  \item $x=0$ %$f(x) = \sin x$, em $\left[\frac{-\pi}{2},\frac{\pi}{2}\right]$
+  % \item $x=$ %$f(x) = $, em $[]$
+  % \item $x=$ %$f(x) = $, em $[]$
+  \end{enumerate}
+
+% \item Determine o erro relativo da aproximação $\bar{x}$ encontrada em
+%   cada item do exercício 1, considerando que as soluções exatas são as
+%   do exercício 2:
+
+\item Faça o estudo de sinais das funções do exercício 1 e isole as
+  raízes em intervalos que contenham uma única raiz, cada. (Obs:
+  existem várias respostas possíveis. Encontre a sua!)
 
 \section{Problemas}
 
 % Encontre o erro relativo da solução encontrada usando o método da
 % bissecção após 3 iterações no intervalo [a,b]
+
+\item O problema ``encontrar a raiz de $f(x) = x^2 e^x$ em
+  $[-0.3,1.2]$'' não pode ser resolvido pelo método da bissecção. Por
+  que?
+
+\item (Desafio) O método da bissecção pode ser utilizado para
+  encontrar uma aproximação de $\sqrt{2}$. Pense e identifique uma
+  função apropriada que tenha como raiz o número $\sqrt{2}$ e use um
+  intervalo apropriado para aplicar o método.
+
+\item (Desafio) Quantas iterações do método da bissecção são
+  necessárias para atingir a precisão $\varepsilon<10^{-3}$ para a
+  função $f(x)= \frac{\cos x}{| x \log x |}$ no intervalo $\left[\pi,
+    2\pi \right]$?
+
+\item (Desafio: baseado em fatos reais) Você trabalha como
+  administrador Linux de um servidor de emails, mas após uma pane
+  elétrica o arquivo de emails do gerente foi corrompido. Esse cliente
+  precisa com urgência das informações contidas em um email específico
+  antes de uma reunião, mas depende de você para recuperá-lo. Ele lhe
+  fornece uma palavra chave específica que ele garante estar contida
+  apenas no email que ele precisa, e pode ser usada para buscá-lo na
+  inbox. Como o a inbox do usuário é um arquivo texto com 10732891
+  linhas, você não pode simplesmente abrí-lo num editor de textos e
+  fazer a busca pois a memória do computador não suporta um arquivo
+  deste tamanho. Você decide usar um comando do UNIX que lhe permite
+  localizar uma palavra em arquivos de qualquer tamanho de maneira
+  eficiente (quase instantânea) e decide usar isso para cortar o
+  arquivo pela metade várias vezes até que o arquivo final seja
+  pequeno o suficiente para ser aberto e o email recuperado. Quantas
+  iterações desse processo serão necessárias para que o arquivo final
+  tenha menos de 10000 linhas?
+\end{enumerate}
+
 
 \end{document}
