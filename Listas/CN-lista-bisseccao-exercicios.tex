@@ -132,7 +132,8 @@ Cálculo Numérico: Lista Método da Bissecção
   \item $f(x) = x^3-1.5x$, em $[1, 2.5]$
   \item $f(x) = x e^x$, em $[-0.5, 1]$
   \item $f(x) = \sin x$, em
-    $\left[\frac{-\pi}{2},\frac{\pi}{4}\right]$
+    $\left[\frac{-\pi}{2},\frac{\pi}{4}\right]$ (Sugestão: use $\pi
+    \approx 3.1416$
   % \item $f(x) = $, em $[]$
   % \item $f(x) = $, em $[]$
   \end{enumerate}
@@ -172,24 +173,24 @@ Cálculo Numérico: Lista Método da Bissecção
 \item (Desafio) O método da bissecção pode ser utilizado para
   encontrar uma aproximação de $\sqrt{2}$. Pense e identifique uma
   função apropriada que tenha como raiz o número $\sqrt{2}$ e use um
-  intervalo apropriado para aplicar o método.
+  intervalo apropriado para aplicar o método com tolerância
+  $\varepsilon<10^{-2}$.
 
-\item (Desafio) Quantas iterações do método da bissecção são
-  necessárias para atingir a precisão $\varepsilon<10^{-3}$ para a
-  função $f(x)= \frac{\cos x}{| x \log x |}$ no intervalo $\left[\pi,
-    2\pi \right]$?
+\item Quantas iterações do método da bissecção são necessárias para
+  atingir a precisão $\varepsilon<10^{-3}$ para a função $f(x)=
+  \frac{\cos x}{| x \log x |}$ no intervalo $\left[\pi, 2\pi \right]$?
 
-\item (Desafio: baseado em fatos reais) Você trabalha como
-  administrador Linux de um servidor de emails, mas após uma pane
-  elétrica o arquivo de emails do gerente foi corrompido. Esse cliente
-  precisa com urgência das informações contidas em um email específico
-  antes de uma reunião, mas depende de você para recuperá-lo. Ele lhe
-  fornece uma palavra chave específica que ele garante estar contida
-  apenas no email que ele precisa, e pode ser usada para buscá-lo na
-  inbox. Como o a inbox do usuário é um arquivo texto com 10732891
-  linhas, você não pode simplesmente abrí-lo num editor de textos e
-  fazer a busca pois a memória do computador não suporta um arquivo
-  deste tamanho. Você decide usar um comando do UNIX que lhe permite
+\item (baseado em fatos reais) Você trabalha como administrador Linux
+  de um servidor de emails, mas após uma pane elétrica o arquivo de
+  emails do gerente foi corrompido. Esse cliente precisa com urgência
+  das informações contidas em um email específico antes de uma
+  reunião, mas depende de você para recuperá-lo. Ele lhe fornece uma
+  palavra chave específica que ele garante estar contida apenas no
+  email que ele precisa, e pode ser usada para buscá-lo na inbox. Como
+  o a inbox do usuário é um arquivo texto com 10732891 linhas, você
+  não pode simplesmente abrí-lo num editor de textos e fazer a busca
+  pois a memória do computador não suporta um arquivo deste
+  tamanho. Você decide usar um comando do UNIX que lhe permite
   localizar uma palavra em arquivos de qualquer tamanho de maneira
   eficiente (quase instantânea) e decide usar isso para cortar o
   arquivo pela metade várias vezes até que o arquivo final seja
