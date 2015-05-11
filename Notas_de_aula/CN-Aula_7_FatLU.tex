@@ -1,0 +1,398 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Cálculo Numérico: Notas de Aula: Fatoração LU
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}\par}
+}
+
+Versão: \verb|20150511|
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{3.2.3 Fatoração LU}
+
+\subsection*{Cálculo dos Fatores L e U}
+
+A matriz A antes de iniciar a eliminação de Gauss (``etapa 0''):
+
+\begin{displaymath}
+  A^{(0)} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+Na etapa 1 são feitas as operações:
+
+$L_2 = L_2 - m_{21}L_1$
+
+$L_3 = L_3 - m_{31}L_1$
+
+que resultam na matriz:
+
+\begin{displaymath}
+  A^{(1)} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & a_{32} & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+Na etapa 2 é feita a operação
+
+$L_3 = L_3 - m_{32}L_1$
+
+Ao final da etapa 2, temos uma matriz triangular superior:
+
+\begin{displaymath}
+  A^{(2)} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & 0 & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+Partindo da matriz $A^{(0)}$ até chegar na matriz $A^{(2)}$ utilizamos
+os multiplicadores $m_{21}$, $m_{31}$ e $m_{32}$.
+
+Podemos incorporar todos esses multiplicadores nas suas respectivas
+posições de uma matriz identidade, e obter uma matriz $L$ que é
+triangular inferior com 1 na diagonal:
+
+\begin{displaymath}
+  L = \begin{bmatrix}
+    1 & 0 & 0 \\
+    m_{21} & 1 & 0 \\
+    m_{31} & m_{32} & 1 \\
+  \end{bmatrix}
+\end{displaymath}
+
+E a matriz $U$ que é triangular superior é a etapa final da eliminação:
+
+\begin{displaymath}
+  U = A^{(2)} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & 0 & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+de modo que a matriz original $A^{(0)}$ é o produto
+
+\begin{displaymath}
+  A = LU
+\end{displaymath}
+
+\subsection*{Resolução do Sistema Linear Ax=b Usando a Fatoração LU de
+A}
+
+\begin{displaymath}
+  Ax = b \iff (LU)x=b
+\end{displaymath}
+
+Seja $y = Ux$. 
+
+\begin{displaymath}
+  Ax = b \iff (LU)x=b \iff L(Ux)=b \iff L(y) = b
+\end{displaymath}
+
+Resolvendo da esquerda para a direita, temos:
+
+\begin{enumerate}
+\item $Ly = b$
+\item $Ux = y$
+\end{enumerate}
+
+\subsection*{Exemplo}
+
+\begin{displaymath}
+  \left\{
+  \begin{array}{ccccc}
+    3x_1 &+ 2x_2 &+ 4x_3 &=&1\\
+    x_1 &+ x_2 &+ 2x_3 &=& 2\\
+    4x_1 &+ 3x_2 & 2x_3 &=& 3\\
+  \end{array}
+\right.
+\end{displaymath}
+
+\begin{displaymath}
+  A = A^{(0)} = \begin{bmatrix}
+    3 & 2 & 4 \\
+    1 & 1 & 2 \\
+    4 & 3 & 2 \\
+  \end{bmatrix}
+\end{displaymath}
+
+
+\subsubsection*{Etapa 1}
+pivô : $3$
+
+multiplicadores 
+
+$m_{21}= \frac{1}{3}$
+
+$m_{31} = \frac{4}{3}$
+
+E transformamos $A^{(0)}$ na seguinte matriz $A^{(1)}$:
+
+\begin{displaymath}
+  A^{(1)} = \begin{bmatrix}
+    3 & 2 & 4\\
+    0 & \frac{1}{3} & \frac{2}{3}\\
+    0 & \frac{1}{3} & \frac{-10}{3}\\
+  \end{bmatrix}
+\end{displaymath}
+
+\subsubsection*{Etapa 2}
+
+pivô: $\frac{1}{3}$
+
+multiplicador: $\frac{\frac{1}{3}}{\frac{1}{3}} = 1$
+
+E transformamos a matriz $A^{(1)}$ na matriz $A^{(2)}$:
+
+\begin{displaymath}
+  A^{(1)} = \begin{bmatrix}
+    3 & 2 & 4\\
+    0 & \frac{1}{3} & \frac{2}{3}\\
+    0 & 0 & -4\\
+  \end{bmatrix}
+\end{displaymath}
+
+Os fatores $L$ e $U$ são:
+
+\begin{displaymath}
+  L = \begin{bmatrix}
+    1 & 0 & 0\\
+    \frac{1}{3} & 1 & 0\\
+    \frac{4}{3} & 1 & 1\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  U = \begin{bmatrix}
+    3 & 2 & 4\\
+    0 & \frac{1}{3} & \frac{2}{3}\\
+    0 & 0 & -4\\
+  \end{bmatrix}
+\end{displaymath}
+
+
+\subsubsection*{Resolução}
+
+Resolvendo $L(Ux)=b$
+
+\begin{enumerate}
+\item $Ly=b$
+
+  \begin{displaymath}
+    \left\{
+      \begin{array}{ccccc}
+        y_1 & & &=&1\\
+        \frac{1}{3} y_1 &+ y_2 &  &=& 2\\
+        \frac{4}{3} y_1 &+ y_2 & x_3 &=& 3\\
+      \end{array}
+    \right.
+  \end{displaymath}
+  
+Solução: $y_1 = 1, y_2 = \frac{5}{3}, y_3 = 0$
+
+\item $Ux = y$
+
+\begin{displaymath}
+  \left\{
+  \begin{array}{ccccc}
+    3x_1 &+ 2x_2 &+ 4x_3 &=&1\\
+     & \frac{1}{3} x_2 &+ \frac{2}{3} x_3 &=& \frac{5}{3}\\
+     & & -4x_3 &=& 0\\
+  \end{array}
+\right.
+\end{displaymath}
+
+Solução: $x_1=-3, x_2 = 5, x_3 = 0$
+\end{enumerate}
+
+\subsection*{Justificativa do método}
+
+As operações nas linhas da etapa 1 podem ser incorporadas em uma matriz $M^{(0)}$:
+
+\begin{displaymath}
+  M^{(0)} = \begin{bmatrix}
+    1 & 0 & 0 \\
+    -m_{21} & 1 & 0 \\
+    -m_{31} & 0 & 1 \\
+  \end{bmatrix}
+\end{displaymath}
+
+Ou seja, a matriz $M^{(0)}$ é a identidade $I$ com os multiplicadores
+da primeira etapa na primeira coluna em suas posições respectivas.
+
+% \begin{displaymath}
+%   I = \begin{bmatrix}
+%     1 & 0 & 0 \\
+%     0 & 1 & 0 \\
+%     0 & 0 & 1 \\
+%   \end{bmatrix}
+% \end{displaymath}
+
+Assim, 
+
+\begin{displaymath}
+   M^{(0)}A^{(0)} = A^{(1)}
+\end{displaymath}
+ou:
+\begin{displaymath}
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    -m_{21} & 1 & 0 \\
+    -m_{31} & 0 & 1 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33} \\
+  \end{bmatrix} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & a_{32} & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+A segunda etapa pode ser incorporada analogamente:
+
+\begin{displaymath}
+   M^{(1)}A^{(1)} = A^{(2)}
+\end{displaymath}
+ou:
+\begin{displaymath}
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & -m_{32} & 1 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & a_{32} & a_{33} \\
+  \end{bmatrix} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & 0 & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+Concluímos que o método de Eliminação de Gauss é equivalente a:
+
+\begin{displaymath}
+  A = A^{(0)}
+\end{displaymath}
+
+\begin{displaymath}
+  A^{(1)} = M^{(0)}A^{(0)} = M^{(0)}A
+\end{displaymath}
+
+\begin{displaymath}
+  A^{(2)} = M^{(1)}A^{(1)} = M^{(1)}M^{(0)}A
+\end{displaymath}
+
+Assim, a matriz $L$, triangular inferior com 1 na diagonal é:
+
+\begin{displaymath}
+  L = \begin{bmatrix}
+    1 & 0 & 0 \\
+    m_{21} & 1 & 0 \\
+    m_{31} & m_{32} & 1 \\
+  \end{bmatrix}
+\end{displaymath}
+
+E a matriz $U$ é a etapa final:
+
+\begin{displaymath}
+  U = A^{(2)} = \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & 0 & a_{33} \\
+  \end{bmatrix}
+\end{displaymath}
+
+\end{document}
