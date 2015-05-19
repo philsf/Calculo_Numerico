@@ -1,0 +1,313 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Cálculo Numérico: Gabarito de Fatoração LU
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}\par}
+}
+
+Versão: \verb|20150519|
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{}
+
+\section{}
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item % A=[ 3,4; 2,3], b=[7;5], [L,U,P]=lu(A), y=L\b, x=U\y
+\begin{verbatim}
+L =
+   1.00000   0.00000
+   0.66667   1.00000
+
+U =
+   3.00000   4.00000
+   0.00000   0.33333
+
+y =
+   7.00000
+   0.33333
+
+x =
+   1.00000
+   1.00000
+\end{verbatim}
+    % $A = \begin{bmatrix}
+    %     3 & 4\\
+    %     2 & 3\\
+    %   \end{bmatrix},
+    %   b= \begin{bmatrix}
+    %     7\\
+    %     5\\
+    %   \end{bmatrix}$
+
+  \item % A=[5,7,11 ; -1,0,2; -1,0,3], b=[10;12;0], [L,U,P]=lu(A), y=L\b, x=U\y
+\begin{verbatim}
+L =
+   1.00000   0.00000   0.00000
+  -0.20000   1.00000   0.00000
+  -0.20000   1.00000   1.00000
+
+U =
+    5.00000    7.00000   11.00000
+    0.00000    1.40000    4.20000
+    0.00000    0.00000    1.00000
+
+y =
+   10
+   14
+  -12
+
+x =
+  -36
+   46
+  -12
+\end{verbatim}
+    % $A = \begin{bmatrix}
+    %   5 & 7 & 11\\
+    %   -1 & 0 & 2\\
+    %   -1 & 0 & 3\\
+    %   \end{bmatrix},
+    %   b= \begin{bmatrix}
+    %     10\\
+    %     12\\
+    %     0\\
+    %   \end{bmatrix}$
+
+  \item % A=[22,-44,6; 5,7,-1; -11,22,-3], b=[2;-2;1], [L,U,P]=lu(A), y=L\b, x=U\y
+\begin{verbatim}
+L =
+   1.00000   0.00000   0.00000
+   0.22727   1.00000   0.00000
+  -0.50000   0.00000   1.00000
+
+U =
+   22.00000  -44.00000    6.00000
+    0.00000   17.00000   -2.36364
+    0.00000    0.00000    0.00000
+
+y =
+   2.0000
+  -2.4545
+   2.0000
+\end{verbatim}
+    % $A = \begin{bmatrix}
+    %   22 & -44 & 6\\
+    %   -5 & 7 & -1\\
+    %   -11 & 22 & -3\\
+    %   \end{bmatrix},
+    %   b= \begin{bmatrix}
+    %     1\\
+    %     2\\
+    %     -2\\
+    %   \end{bmatrix}$
+
+  \item % A = [-5.0,0.2,-0.1,4.0;1.1,1.2,1.3,0.0;0.9,-1.0,3.7,0.0;-2.3,0.2,-0.1,0.0], b=[0.0;0.1;-2.5;-5.2], [L,U,P]=lu(A), y=L\b, x=U\y
+\begin{verbatim}
+L =
+   1.00000   0.00000   0.00000   0.00000
+  -0.22000   1.00000   0.00000   0.00000
+  -0.18000  -0.77492   1.00000   0.00000
+   0.46000   0.08682  -0.03530   1.00000
+
+U =
+  -5.00000   0.20000  -0.10000   4.00000
+   0.00000   1.24400   1.27800   0.88000
+   0.00000   0.00000   4.67235   1.40193
+   0.00000   0.00000   0.00000  -1.86691
+
+y =
+   0.00000
+   0.10000
+  -2.42251
+  -5.29421
+
+x =
+   2.27529
+  -0.51887
+  -1.36936
+   2.83582
+\end{verbatim}
+    % $A = \begin{bmatrix}
+    %   -5.0 & 0.2 & -0.1 & 4.0\\
+    %   1.1 & 1.2 & 1.3 & 0.0\\
+    %   0.9 & -1.0 & 3.7 & 0.0\\
+    %   -2.3 & 0.2 & -0.1 & 0.0\\
+    %   \end{bmatrix},
+    %   b= \begin{bmatrix}
+    %     0.0\\
+    %     0.1\\
+    %     -2.5\\
+    %     -5.2\\
+    %   \end{bmatrix}$
+
+  \item % A = [-3.76,2.00,1.71;1.00,-2.04,0.00; 0.00,0.25,0.37], b= [0.13; 0.45; 0.50], [L,U,P]=lu(A), y=L\b, x=U\y
+\begin{verbatim}
+L =
+   1.00000   0.00000   0.00000
+  -0.26596   1.00000   0.00000
+  -0.00000  -0.16577   1.00000
+
+U =
+  -3.76000   2.00000   1.71000
+   0.00000  -1.50809   0.45479
+   0.00000   0.00000   0.44539
+
+y =
+   0.13000
+   0.48457
+   0.58033
+
+x =
+   0.596089
+   0.071612
+   1.302965
+\end{verbatim}
+    % $A = \begin{bmatrix}
+    %   -3.76 & 2.00 & 1.71\\
+    %   1.00 & -2.04 & 0.00\\
+    %   0.00 & 0.25 & 0.37\\
+    %   \end{bmatrix},
+    %   b= \begin{bmatrix}
+    %     0.13\\
+    %     0.45\\
+    %     0.50\\
+    %   \end{bmatrix}$
+
+  \item % A = [-1.4,0.0,4.0,-2.0;-0.7,2.2,2.6,-1.3;1.0,2.0,3.0,-1.5;0.0,0.0,-0.2,0.1], b=[2.0;3.0;1.0;4.0], [L,U,P]=lu(A), y=L\b, x=U\y
+\begin{verbatim}
+L =
+   1.00000   0.00000   0.00000   0.00000
+   0.50000   1.00000   0.00000   0.00000
+  -0.71429   0.90909   1.00000   0.00000
+  -0.00000   0.00000  -0.03765   1.00000
+
+U =
+  -1.40000   0.00000   4.00000  -2.00000
+   0.00000   2.20000   0.60000  -0.30000
+   0.00000   0.00000   5.31169  -2.65584
+   0.00000   0.00000   0.00000   0.00000
+
+y =
+   2.00000
+   2.00000
+   0.61039
+   4.02298
+\end{verbatim}
+    % $A = \begin{bmatrix}
+    %   -1.4 & 0.0 & 4.0 & -2.0\\
+    %   -0.7 & 2.2 & 2.6 & -1.3\\
+    %   1.0 & 2.0 & 3.0 & -1.5\\
+    %   0.0 & 0.0 & -0.2 & 0.1\\
+    % \end{bmatrix},
+    % b= \begin{bmatrix}
+    %   2.0\\
+    %   3.0\\
+    %   1.0\\
+    %   4.0\\
+    % \end{bmatrix}$
+
+  % \item % A = [-1.4,0.0,4.0,-2.0;-0.7,2.2,2.6,-1.3;1.0,2.0,3.0,-1.5;0.0,0.0,-0.2,0.1 ], b=[2.0;3.0;1.0;0.0], [L,U,P]=lu(A), y=L\b, x=U\y
+  %   $A = \begin{bmatrix}
+  %     -1.4 & 0.0 & 4.0 & -2.0\\
+  %     -0.7 & 2.2 & 2.6 & -1.3\\
+  %     1.0 & 2.0 & 3.0 & -1.5\\
+  %     0.0 & 0.0 & -0.2 & 0.1\\
+  %     \end{bmatrix},
+  %     b= \begin{bmatrix}
+  %       2.0\\
+  %       3.0\\
+  %       1.0\\
+  %       0.0\\
+  %     \end{bmatrix}$
+
+  % \item % 
+  %   $A = \begin{bmatrix}
+  %     \\
+  %     \end{bmatrix},
+  %     b= \begin{bmatrix}
+  %       \\
+  %     \end{bmatrix}$
+
+  \end{enumerate}
+\end{enumerate}
+\end{document}
