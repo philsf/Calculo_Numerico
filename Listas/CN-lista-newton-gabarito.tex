@@ -81,7 +81,7 @@ Cálculo Numérico: Gabarito de Método de Newton
 {\url{http://sites.google.com/site/proffelipefigueiredo}\par}
 }
 
-Versão: \verb|20150519|
+Versão: \verb|20150519.2|
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -159,7 +159,42 @@ Versão: \verb|20150519|
 
 \item % (Conjugação de métodos) Quando não se tem um bom ponto de
   % partida $x_0$ para se aplicar o Método de Newton, podemos usar
-  % algumas iterações do Método da Bissecção para obtê-la.
+  % algumas iterações do Método da Bissecção para obtê-la. Considere a
+  % função $f(x) = e^{2x} (x^3-15x^2+1)$. Vamos encontrar uma
+  % aproximação para a raiz desta função contida no intervalo $[-1,0.1]$
+  % com precisão de $\varepsilon<0.001$.
+  \begin{enumerate}
+  \item $f'(x) = 2e^{2x}(x^3-15x^2+1) + e^{2x}(3x^2-30x)$ %Qual é a derivada desta função?
+  \item $a=-1$, $b=0.1$ portanto $f(a) = -2.03002924$ e $f(b) =
+    1.03941374$
+    % Verifique que a função troca de sinais no intervalo $[-1,0.1]$,
+    % e portanto o método da Bissecção pode ser aplicada
+    % para encontrar uma raiz aproximada para ela.
+  \item $x_2 = -0.175$  
+    % Aplique o Método da Bissecção por duas iterações, e encontre
+    % $x_2$ no intervalo $[-1,0.1]$. Verifique que para este método,
+    % você precisaria de 12 iterações para atingir a precisão de
+    % $0.001$
+  \item $\bar{x} = x_2 = -0.256023160108161823$
+
+\begin{tabular}{c|c|c|c|c}
+  $k$ & $x_k$ & $f(x_k)$ & $f'(x_k)$ & $\varepsilon = |f(x_k)|$\\
+  \hline
+  0 & -0.175 & 0.37719531077 & 4.5187463108 & 0.37719531077\\
+  \hline
+  1 & -0.25847344259 & -0.011566602376 & 4.7205179167 & 0.011566602376\\
+  \hline
+  2 & -0.25602316010 & 2.112113888E-7 & 4.7206374662 & 2.112113888E-7\\
+    \end{tabular}
+    % Use o valor do item anterior como valor inicial $x_0$ do Método
+    % de Newton, e encontre uma aproximação com precisão de
+    % $0.001$. (Obs: se você utilizar o critério de parada
+    % $\varepsilon =
+    % |f(x_n)|$, você precisará de 2 iterações. Se você utilizar o
+    % critério $\varepsilon = |x_n - x_{n-1}|$ precisará de 3
+    % iterações.)
+  \end{enumerate}
+
 
 \end{enumerate}
 

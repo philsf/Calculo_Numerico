@@ -81,7 +81,7 @@ Cálculo Numérico: Lista de Método de Newton
 {\url{http://sites.google.com/site/proffelipefigueiredo}\par}
 }
 
-Versão: \verb|20150519|
+Versão: \verb|20150519.2|
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -175,8 +175,24 @@ Versão: \verb|20150519|
 
 \item (Conjugação de métodos) Quando não se tem um bom ponto de
   partida $x_0$ para se aplicar o Método de Newton, podemos usar
-  algumas iterações do Método da Bissecção para obtê-la. Aplique 2
-  iterações do Método da Bissecção na função $f(x)=$
+  algumas iterações do Método da Bissecção para obtê-la. Considere a
+  função $f(x) = e^{2x} (x^3-15x^2+1)$. Vamos encontrar uma
+  aproximação para a raiz desta função contida no intervalo $[-1,0.1]$
+  com precisão de $\varepsilon<0.001$.
+  \begin{enumerate}
+  \item Qual é a derivada desta função?
+  \item Verifique que a função troca de sinais no intervalo
+    $[-1,0.1]$, e portanto o método da Bissecção pode ser aplicada
+    para encontrar uma raiz aproximada para ela.
+  \item Aplique o Método da Bissecção por duas iterações, e encontre
+    $x_2$ no intervalo $[-1,0.1]$. Verifique que para este método,
+    você precisaria de 12 iterações para atingir a precisão de $0.001$
+  \item Use o valor do item anterior como valor inicial $x_0$ do
+    Método de Newton, e encontre uma aproximação com precisão de
+    $0.001$. (Obs: se você utilizar o critério de parada $\varepsilon =
+    |f(x_n)|$, você precisará de 2 iterações. Se você utilizar o
+    critério $\varepsilon = |x_n - x_{n-1}|$ precisará de 3 iterações.)
+  \end{enumerate}
 
 \end{enumerate}
 
