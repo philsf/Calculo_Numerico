@@ -10,8 +10,8 @@ function gauss(A,b);
       A(i,k)=0;
       for j=k+1:n
 	  A(i,j) = A(i,j) - m(i,k)*A(k,j);
-	  b(i) = b(i) - m(i,k)*b(k);
       end
+      b(i) = b(i) - m(i,k)*b(k);
     end
     A,b %resultado da etapa k
   end
