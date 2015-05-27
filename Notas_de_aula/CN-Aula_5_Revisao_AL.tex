@@ -64,8 +64,6 @@
 \newcommand{\ud}{\mathrm{\ d}}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,7 +79,7 @@ Cálculo Numérico: Notas de Aula: Método de Newton
 {\url{http://sites.google.com/site/proffelipefigueiredo}\par}
 }
 
-Versão: \verb|20150503|
+Versão: \verb|20150527|
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -90,13 +88,170 @@ Versão: \verb|20150503|
 \section*{Revisão de Álgebra Linear}
 
 \subsection*{Matrizes Triangulares}
+\begin{displaymath}
+  L = \begin{bmatrix}
+    1&0&0&0\\
+    0&1&0&0\\
+    1&0&1&0\\
+    0&1&0&1\\
+  \end{bmatrix}
+\end{displaymath}
+
+e 
+
+\begin{displaymath}
+  U = \begin{bmatrix}
+    -1&0&2&1\\
+    0&1&1&0\\
+    0&0&-1&3\\
+    0&0&0&4\\
+  \end{bmatrix}
+\end{displaymath}
 
 \subsection*{Produto de Matrizes Triangulares}
 
+\begin{displaymath}
+  LU = \begin{bmatrix}
+    1&0&0&0\\
+    0&1&0&0\\
+    1&0&1&0\\
+    0&1&0&1\\
+  \end{bmatrix} \begin{bmatrix}
+    -1&0&2&1\\
+    0&1&1&0\\
+    0&0&-1&3\\
+    0&0&0&4\\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    -1&0&2&1\\
+    0&1&1&0\\
+    -1&0&1&4\\
+    0&1&1&4\\
+  \end{bmatrix}
+\end{displaymath}
+
 \subsection*{Sistemas Lineares e Matriciais}
+
+\begin{displaymath}
+  Ux=b
+\end{displaymath}
+
+\begin{displaymath}
+  \begin{bmatrix}
+    -1&0&2&1\\
+    0&1&1&0\\
+    0&0&-1&3\\
+    0&0&0&4\\
+  \end{bmatrix}
+  \begin{bmatrix}
+    x_1\\
+    x_2\\
+    x_3\\
+    x_4\\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    -6\\
+    1\\
+    4\\
+    4\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  \left\{\begin{array}{ccccccccc}
+      -x_1 &+&  &+& 2x_3 &+& x_4 &=&-6 \\
+      && x_2 &+& x_3 && &=& 1\\
+      && &-&x_3 &+& 3x_4 &=&4\\
+      &&&&&&4x_4 &=& 4\\
+    \end{array}
+  \right.
+\end{displaymath}
 
 \subsection*{Resolução de Sistemas Triangulares}
 
+\begin{displaymath}
+  x=
+  \begin{bmatrix}
+    x_1\\
+    x_2\\
+    x_3\\
+    x_4\\
+  \end{bmatrix}
+  =
+\begin{bmatrix}
+    5\\
+    2\\
+    -1\\
+    1\\
+  \end{bmatrix}
+\end{displaymath}
+
+
 \subsection*{Inversão de Matrizes}
 
+Resolução de um sistema linear usando a matriz inversa
+
+\begin{displaymath}
+  Ax=b
+\end{displaymath}
+\begin{displaymath}
+  A^{-1}Ax=A^{-1}b
+\end{displaymath}
+\begin{displaymath}
+  x=A^{-1}b
+\end{displaymath}
+
+
+\begin{displaymath}
+  A=\begin{bmatrix}
+  2&3\\
+  3&4\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  [A|I]=\begin{bmatrix}
+  2&3&|&1&0\\
+  3&4&|&0&1\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  \begin{bmatrix}
+    1&3/2&|&1/2&0\\
+    3&4&|&0&1\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  \begin{bmatrix}
+    1&3/2&|&1/2&0\\
+    0&1/2&|&3/2&-1\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  \begin{bmatrix}
+    1&3/2&|&1/2&0\\
+    0&1&|&3&-2\\
+  \end{bmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+  \begin{bmatrix}
+    1&0&|&-4&3\\
+    0&1&|&3&-2\\
+  \end{bmatrix}
+\end{displaymath}
+
+
+\begin{displaymath}
+  A^{-1}=
+  \begin{bmatrix}
+    -4&3\\
+    3&-2\\
+  \end{bmatrix}
+\end{displaymath}
 \end{document}
