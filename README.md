@@ -10,6 +10,19 @@
 * [Fatoração LU](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-FatLU.pdf)
 * [Integração Numérica](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-Integracao.pdf)
 
+## Bibliografia ##
+
+### Livro texto adotado ###
+
+* RUGGIERO, Márcia A. Gomes; LOPES, Vera Lúcia da Rocha. *Cálculo Numérico - Aspectos teóricos e computacionais* 2a ed. São Paulo: Pearson - Makron Books, 1996.
+
+### Outros livros recomendados ###
+
+* FRANCO, Neide M.B.. *Cálculo numérico*. 1a ed. São Paulo: Pearson - Prentice Hall, 2007
+* CAMPOS, Frederico Ferreira. *Algoritmos Numéricos* 2a ed., Belo Horizonte: LTC, 2007
+* ASANO, Claudio Hirofume. *Cálculo Numérico - Fundamentos e Aplicações*: São Paulo, 2009
+Obs: O livro de Márcia RUGGIERO tem um enfoque mais prático, com texto simplificado. Os livros de Neide FRANCO e Frederico CAMPOS tem enfoque mais matemático e presumem uma base de matemática mais profunda. 
+
 ## Listas de exercícios ##
 
 * [Sistemas de numeração](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-sistnum-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-sistnum-gabarito.pdf)
