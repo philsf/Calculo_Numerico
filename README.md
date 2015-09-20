@@ -1,5 +1,9 @@
 # Calculo Numérico
 
+## Objetivo ##
+
+Apresentar aos alunos alguns métodos numéricos que podem ser aplicados na solução de problemas práticos de engenharia. Introduzir o conceito de aproximação e erros numéricos.
+
 ## Aulas de conteúdo ##
 * [Sistemas Binário, Decimal e Hexadecimal](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-SistNum.pdf)
 * [Ponto Flutuante e Erros](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-PF_Erro.pdf)
