@@ -22,6 +22,6 @@
 * [Integração Numérica](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-integracaonum-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-integracaonum-gabarito.pdf)
 
 ## Trabalhos ##
-* Trabalho 0
+* [Trabalho 0](https://github.com/philsf/Calculo_Numerico/raw/master/Trabalhos/CN-Trabalho0.pdf)
 * Trabalho 1
-* Trabalho 2
+* Trabalho 2 - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Trabalhos/CN-ATPS-Gabarito_3_4.pdf)
