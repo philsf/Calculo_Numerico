@@ -1,5 +1,6 @@
 .gitignore export-ignore
 .gitattributes export-ignore
+README.md export-ignore
 Listas/*.tex export-ignore
 Listas/*.png export-ignore
 Notas_de_aula/*.tex export-ignore
