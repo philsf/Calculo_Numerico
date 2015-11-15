@@ -2,4 +2,5 @@
 .gitattributes export-ignore
 *.tex text export-ignore
 *.png binary export-ignore
-README.md
+README.md export-ignore
+
