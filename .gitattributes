@@ -1,10 +1,5 @@
 .gitignore export-ignore
 .gitattributes export-ignore
-# Listas/*.tex export-ignore
-# Listas/*.png export-ignore
-# Notas_de_aula/*.tex export-ignore
-# Notas_de_aula/*.png export-ignore
-# Trabalhos/*.tex export-ignore
-# Trabalhos/*.png export-ignore
 *.tex text export-ignore
 *.png binary export-ignore
+README.md
