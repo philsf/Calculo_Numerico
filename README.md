@@ -5,14 +5,14 @@
 Apresentar aos alunos alguns métodos numéricos que podem ser aplicados na solução de problemas práticos de engenharia. Introduzir o conceito de aproximação e erros numéricos.
 
 ## Aulas de conteúdo ##
-* [Sistemas Binário, Decimal e Hexadecimal](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-SistNum.pdf)
-* [Ponto Flutuante e Erros](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-PF_Erro.pdf)
-* [Método da Bisseção](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-Bisseccao.pdf)
-* [Método de Newton-Raphson](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-Newton.pdf)
-* [Revisão de Álgebra Linear](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-Revisao_AL.pdf)
-* [Eliminação de Gauss](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-Eliminacao_Gauss.pdf)
-* [Fatoração LU](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-FatLU.pdf)
-* [Integração Numérica](https://github.com/philsf/Calculo_Numerico/raw/master/Notas_de_aula/CN-Notas_de_aula-Integracao.pdf)
+* [Sistemas Binário, Decimal e Hexadecimal](Notas_de_aula/CN-Notas_de_aula-SistNum.pdf)
+* [Ponto Flutuante e Erros](Notas_de_aula/CN-Notas_de_aula-PF_Erro.pdf)
+* [Método da Bisseção](Notas_de_aula/CN-Notas_de_aula-Bisseccao.pdf)
+* [Método de Newton-Raphson](Notas_de_aula/CN-Notas_de_aula-Newton.pdf)
+* [Revisão de Álgebra Linear](Notas_de_aula/CN-Notas_de_aula-Revisao_AL.pdf)
+* [Eliminação de Gauss](Notas_de_aula/CN-Notas_de_aula-Eliminacao_Gauss.pdf)
+* [Fatoração LU](Notas_de_aula/CN-Notas_de_aula-FatLU.pdf)
+* [Integração Numérica](Notas_de_aula/CN-Notas_de_aula-Integracao.pdf)
 
 ## Bibliografia ##
 
@@ -29,16 +29,16 @@ Obs: O livro de Márcia RUGGIERO tem um enfoque mais prático, com texto simplif
 
 ## Listas de exercícios ##
 
-* [Sistemas de numeração](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-sistnum-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-sistnum-gabarito.pdf)
-* [Ponto flutuante e Erros](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-pf-erros-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-pf-erros-gabarito.pdf)
-* [Método da Bissecção](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-bisseccao-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-bisseccao-gabarito.pdf)
-* [Método de Newton](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-newton-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-newton-gabarito.pdf)
-* [Resolução do exercício (em aula) de Eliminação de Gauss](https://github.com/philsf/Calculo_Numerico/blob/master/Notas_de_aula/CN-Notas_de_aula-Eliminacao_Gauss-exercicio.pdf)
-* [Eliminação de Gauss](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-eliminacaogauss-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-eliminacaogauss-gabarito.pdf)
-* [Fatoração LU](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-fatoracaolu-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-fatoracaolu-gabarito.pdf)
-* [Integração Numérica](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-integracaonum-exercicios.pdf) - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Listas/CN-lista-integracaonum-gabarito.pdf)
+* [Sistemas de numeração](Listas/CN-lista-sistnum-exercicios.pdf) - [Gabarito](Listas/CN-lista-sistnum-gabarito.pdf)
+* [Ponto flutuante e Erros](Listas/CN-lista-pf-erros-exercicios.pdf) - [Gabarito](Listas/CN-lista-pf-erros-gabarito.pdf)
+* [Método da Bissecção](Listas/CN-lista-bisseccao-exercicios.pdf) - [Gabarito](Listas/CN-lista-bisseccao-gabarito.pdf)
+* [Método de Newton](Listas/CN-lista-newton-exercicios.pdf) - [Gabarito](Listas/CN-lista-newton-gabarito.pdf)
+* [Resolução do exercício (em aula) de Eliminação de Gauss](Notas_de_aula/CN-Notas_de_aula-Eliminacao_Gauss-exercicio.pdf)
+* [Eliminação de Gauss](Listas/CN-lista-eliminacaogauss-exercicios.pdf) - [Gabarito](Listas/CN-lista-eliminacaogauss-gabarito.pdf)
+* [Fatoração LU](Listas/CN-lista-fatoracaolu-exercicios.pdf) - [Gabarito](Listas/CN-lista-fatoracaolu-gabarito.pdf)
+* [Integração Numérica](Listas/CN-lista-integracaonum-exercicios.pdf) - [Gabarito](Listas/CN-lista-integracaonum-gabarito.pdf)
 
 ## Trabalhos ##
-* [Trabalho 0](https://github.com/philsf/Calculo_Numerico/raw/master/Trabalhos/CN-Trabalho0.pdf)
+* [Trabalho 0](Trabalhos/CN-Trabalho0.pdf)
 * Trabalho 1
-* Trabalho 2 - [Gabarito](https://github.com/philsf/Calculo_Numerico/raw/master/Trabalhos/CN-ATPS-Gabarito_3_4.pdf)
+* Trabalho 2 - [Gabarito](Trabalhos/CN-ATPS-Gabarito_3_4.pdf)
